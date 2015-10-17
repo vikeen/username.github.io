@@ -1,0 +1,127 @@
+{
+    "project": {
+        "name": "Simple Weather",
+        "description": "Simple Interface for Open Weather Map API",
+        "version": "1.2.2"
+    },
+    "files": {
+        "docs/apidocs/assets/vendor/bootstrap/js/bootstrap.min.js": {
+            "name": "docs/apidocs/assets/vendor/bootstrap/js/bootstrap.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/v2.5/current.js": {
+            "name": "lib/v2.5/current.js",
+            "modules": {
+                "current": 1
+            },
+            "classes": {},
+            "fors": {
+                "current": 1
+            },
+            "namespaces": {}
+        },
+        "lib/v2.5/index.js": {
+            "name": "lib/v2.5/index.js",
+            "modules": {
+                "v2.5": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "v2.5": {
+            "name": "v2.5",
+            "submodules": {
+                "current": 1
+            },
+            "elements": {},
+            "classes": {
+                "current": 1
+            },
+            "fors": {
+                "current": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/v2.5/index.js",
+            "line": 3
+        },
+        "current": {
+            "name": "current",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "current": 1
+            },
+            "fors": {
+                "current": 1
+            },
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "v2.5",
+            "namespace": "",
+            "file": "lib/v2.5/current.js",
+            "line": 6
+        }
+    },
+    "classes": {
+        "current": {
+            "name": "current",
+            "shortname": "current",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "v2.5",
+            "submodule": "current",
+            "namespace": ""
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "docs/apidocs/assets/vendor/bootstrap/js/bootstrap.min.js",
+            "line": 1,
+            "description": "Bootstrap.js by @fat & @mdo\nplugins: bootstrap-transition.js, bootstrap-modal.js, bootstrap-dropdown.js, bootstrap-scrollspy.js, bootstrap-tab.js, bootstrap-tooltip.js, bootstrap-popover.js, bootstrap-affix.js, bootstrap-alert.js, bootstrap-button.js, bootstrap-collapse.js, bootstrap-carousel.js, bootstrap-typeahead.js\nCopyright 2012 Twitter, Inc.\nhttp://www.apache.org/licenses/LICENSE-2.0.txt",
+            "class": "current"
+        },
+        {
+            "file": "lib/v2.5/current.js",
+            "line": 20,
+            "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
+            "itemtype": "method",
+            "name": "byCityName",
+            "since": "1.2.1",
+            "params": [
+                {
+                    "name": "city",
+                    "description": "The name of the city",
+                    "type": "String"
+                }
+            ],
+            "optional": "{String} country The name of the country. Providing this improves specificity",
+            "return": {
+                "description": "Returns city weather",
+                "type": "Object"
+            },
+            "example": [
+                "\n    byCityName('Olathe', 'us');"
+            ],
+            "class": "current",
+            "module": "v2.5",
+            "submodule": "current"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nBootstrap.js by @fat & @mdo\nplugins: bootstrap-transition.js, bootstrap-modal.js, bootstrap-dropdown.js, bootstrap-scrollspy.js, bootstrap-tab.js, bootstrap-tooltip.js, bootstrap-popover.js, bootstrap-affix.js, bootstrap-alert.js, bootstrap-button.js, bootstrap-collapse.js, bootstrap-carousel.js, bootstrap-typeahead.js\nCopyright 2012 Twitter, Inc.\nhttp://www.apache.org/licenses/LICENSE-2.0.txt",
+            "line": " docs/apidocs/assets/vendor/bootstrap/js/bootstrap.min.js:1"
+        }
+    ]
+}
