@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
 </head>
@@ -14,7 +15,6 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="Simple Weather" src="../assets/css/logo.png" style="max-height: 65%;" title="Simple Weather">
             Simple Weather
         </h1>
 	<div class="nav">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/current", "modules/v2.5"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/v2.5"]'>
         </form>
     </div>
 </div>
@@ -34,31 +34,12 @@
     <div class="row">
         <div class="span3">
 	    <div>
-	        <h3>APIs</h3>
 	        <div id="sidebar">
-	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
-	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
-	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/current.html">current</a></li>
 	            </ul>
-	    
-	            <div id="api-tabview-filter">
-	                <input type="search" placeholder="Type to filter APIs">
-	            </div>
-	    
-	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
-	                <div class="tab-pane active" id="classes">
-	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/current.html">current</a></li>
-	                    </ul>
-	                </div>
-	    
-	                <div class="tab-pane" id="modules">
-	                    <ul id="api-modules" class="nav nav-list">
-	                            <li><a href="../modules/current.html">current</a></li>
-	                            <li><a href="../modules/v2.5.html">v2.5</a></li>
-	                    </ul>
-	                </div>
-	            </div>
+	        </div>
 	        </div>
 	    </div>
         </div>
@@ -89,113 +70,159 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<div class="page-header">
-    <h1>lib/v2.5/current.js <small>File</small></h1>
-</div>
-
-<div class="file">
-    <pre class="prettyprint linenums">
-&quot;use strict&quot;;
-
-var config = require(&quot;../../config&quot;)(),
-    api = require(&quot;../api&quot;);
-
-/**
- * @module v2.5
- * @submodule current
- */
-module.exports = {
-    byCityName: byCityName,
-    byCityId: byCityId,
-    byCityIds: byCityIds,
-    byGeoLocation: byGeoLocation,
-    byZipcode: byZipcode
-};
-
-//api.openweathermap.org/data/2.5/weather?q={city name}
-//api.openweathermap.org/data/2.5/weather?q={city name},{country code}
-/**
- * My method description.  Like other pieces of your comment blocks,
- * this can span multiple lines.
- *
- * @method byCityName
- * @for current
- * @since 1.2.1
- * @param {String} city The name of the city
- * @optional {String} country The name of the country. Providing this improves specificity
- * @return {Object} Returns city weather
- *
- * @example
- *     byCityName(&#x27;Olathe&#x27;, &#x27;us&#x27;);
- */
-function byCityName(city, country) {
-    var q = city;
-
-    if (country) {
-        q += &#x27;,&#x27; + country
-    }
-
-    return api.request({
-        method: &quot;GET&quot;,
-        url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
-        query: {
-            q: q
-        }
-    });
-}
-
-//api.openweathermap.org/data/2.5/weather?id=2172797
-function byCityId(cityId) {
-    return api.request({
-        method: &quot;GET&quot;,
-        url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
-        query: {
-            id: cityId
-        }
-    });
-}
-
-//http://api.openweathermap.org/data/2.5/group?id=524901,703448,2643743
-function byCityIds(cityIds) {
-    return api.request({
-        method: &quot;GET&quot;,
-        url: config.api[&quot;v2.5&quot;].url + &#x27;/group&#x27;,
-        query: {
-            id: cityIds.join(&#x27;,&#x27;)
-        }
-    });
-}
-
-//api.openweathermap.org/data/2.5/weather?lat=35&amp;lon=139
-function byGeoLocation(latitude, longitude) {
-    return api.request({
-        method: &quot;GET&quot;,
-        url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
-        query: {
-            lat: latitude,
-            lon: longitude
-        }
-    });
-}
-
-//api.openweathermap.org/data/2.5/weather?zip=94040,us
-function byZipcode(zipcode, country) {
-    var q = zipcode;
-
-    if (country) {
-        q += &#x27;,&#x27; + country
-    }
-
-    return api.request({
-        method: &quot;GET&quot;,
-        url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
-        query: {
-            zip: q
-        }
-    });
-}
-    </pre>
-</div>
+                        <div class="page-header">
+                            <h1>lib/v2.5/current.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        &quot;use strict&quot;;
+                        
+                        var config = require(&quot;../../config&quot;)(),
+                            api = require(&quot;../api&quot;);
+                        
+                        /**
+                         * @class current
+                         */
+                        module.exports = {
+                            byCityName: byCityName,
+                            byCityId: byCityId,
+                            byCityIds: byCityIds,
+                            byGeoLocation: byGeoLocation,
+                            byZipcode: byZipcode
+                        };
+                        
+                        /**
+                         * My method description.  Like other pieces of your comment blocks,
+                         * this can span multiple lines.
+                         *
+                         * @method byCityName
+                         * @since 1.2.1
+                         * @param {String} city The name of the city
+                         * @param {String} country The ISO abbreviation of the country. Providing this improves specificity
+                         * @return {Object} Returns city weather
+                         *
+                         * @example
+                         * current.byCityName(&#x27;Olathe&#x27;);
+                         * @example
+                         * current.byCityName(&#x27;Olathe&#x27;, &#x27;us&#x27;);
+                         */
+                        function byCityName(city, country) {
+                            var q = city;
+                        
+                            if (country) {
+                                q += &#x27;,&#x27; + country
+                            }
+                        
+                            return api.request({
+                                method: &quot;GET&quot;,
+                                url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
+                                query: {
+                                    q: q
+                                }
+                            });
+                        }
+                        
+                        /**
+                         * My method description.  Like other pieces of your comment blocks,
+                         * this can span multiple lines.
+                         *
+                         * @method byCityId
+                         * @since 1.2.1
+                         * @param {Integer} cityId A city id
+                         * @return {Object} Returns city weather
+                         *
+                         * @example
+                         * current.byCityId(2172797);
+                         */
+                        function byCityId(cityId) {
+                            return api.request({
+                                method: &quot;GET&quot;,
+                                url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
+                                query: {
+                                    id: cityId
+                                }
+                            });
+                        }
+                        
+                        /**
+                         * My method description.  Like other pieces of your comment blocks,
+                         * this can span multiple lines.
+                         *
+                         * @method byCityIds
+                         * @since 1.2.1
+                         * @param {Integer} cityIds An array of city ids
+                         * @return {Object} Returns city weather
+                         *
+                         * @example
+                         * current.byCityIds([524901,703448,2643743]);
+                         */
+                        function byCityIds(cityIds) {
+                            return api.request({
+                                method: &quot;GET&quot;,
+                                url: config.api[&quot;v2.5&quot;].url + &#x27;/group&#x27;,
+                                query: {
+                                    id: cityIds.join(&#x27;,&#x27;)
+                                }
+                            });
+                        }
+                        
+                        /**
+                         * My method description.  Like other pieces of your comment blocks,
+                         * this can span multiple lines.
+                         *
+                         * @method byGeoLocation
+                         * @since 1.2.1
+                         * @param {Number} latitude A valid geolocation latitude point
+                         * @param {Number} longitude A valid geolocation longitude point
+                         * @return {Object} Returns city weather
+                         *
+                         * @example
+                         * current.byGeoLocation(35.2, 139.123);
+                         */
+                        function byGeoLocation(latitude, longitude) {
+                            return api.request({
+                                method: &quot;GET&quot;,
+                                url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
+                                query: {
+                                    lat: latitude,
+                                    lon: longitude
+                                }
+                            });
+                        }
+                        
+                        /**
+                         * My method description.  Like other pieces of your comment blocks,
+                         * this can span multiple lines.
+                         *
+                         * @method byZipcode
+                         * @since 1.2.1
+                         * @param {Integer|String} zipcode A valid zipcode value
+                         * @param {String} country The ISO abbreviation of the country. Providing this improves specificity
+                         * @return {Object} Returns city weather
+                         *
+                         * @example
+                         * current.byZipcode(66061);
+                         * @example
+                         * current.byZipcode(66061, &#x27;us&#x27;);
+                         */
+                        function byZipcode(zipcode, country) {
+                            var q = zipcode;
+                        
+                            if (country) {
+                                q += &#x27;,&#x27; + country
+                            }
+                        
+                            return api.request({
+                                method: &quot;GET&quot;,
+                                url: config.api[&quot;v2.5&quot;].url + &#x27;/weather&#x27;,
+                                query: {
+                                    zip: q
+                                }
+                            });
+                        }
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>

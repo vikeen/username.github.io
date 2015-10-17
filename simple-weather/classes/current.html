@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
 </head>
@@ -14,7 +15,6 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="Simple Weather" src="../assets/css/logo.png" style="max-height: 65%;" title="Simple Weather">
             Simple Weather
         </h1>
 	<div class="nav">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/current", "modules/v2.5"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/v2.5"]'>
         </form>
     </div>
 </div>
@@ -34,31 +34,12 @@
     <div class="row">
         <div class="span3">
 	    <div>
-	        <h3>APIs</h3>
 	        <div id="sidebar">
-	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
-	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
-	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/current.html">current</a></li>
 	            </ul>
-	    
-	            <div id="api-tabview-filter">
-	                <input type="search" placeholder="Type to filter APIs">
-	            </div>
-	    
-	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
-	                <div class="tab-pane active" id="classes">
-	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/current.html">current</a></li>
-	                    </ul>
-	                </div>
-	    
-	                <div class="tab-pane" id="modules">
-	                    <ul id="api-modules" class="nav nav-list">
-	                            <li><a href="../modules/current.html">current</a></li>
-	                            <li><a href="../modules/v2.5.html">v2.5</a></li>
-	                    </ul>
-	                </div>
-	            </div>
+	        </div>
 	        </div>
 	    </div>
         </div>
@@ -89,135 +70,445 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<div class="page-header">
-    <h1>current <small>Class</small></h1>
-</div>
-
-<div class="well well-small">
-
-
-
-            Module: <a href="../modules/current.html">current</a><br>
-            Parent Module: <a href="../modules/v2.5.html">v2.5</a>
-
-</div>
-
-
-<div class="well well-small">
-    
-</div>
-
-
-<div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
-
-            <li><a data-toggle="tab" href="#methods">Methods</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="index" class="tab-pane active">
-            <h2 class="off-left">Item Index</h2>
-
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_byCityName" data-tablink="byCityName">byCityName</a>
-
-                            </li>
-                    </ul>
-                </div>
-
-
-
-        </div>
-
-            <div id="methods" class="tab-pane">
-                <h2 class="off-left">Methods</h2>
-
-                    <div id="method_byCityName" class="method item">
-                        <h3 class="name"><code>byCityName</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>city</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/lib_v2.5_current.js.html#l20"><code>lib&#x2F;v2.5&#x2F;current.js:20</code></a>
-                            </p>
-                    
-                    
-                    
-                                <p>Available since 1.2.1</p>
+                        <div class="page-header">
+                            <h1>current</h1>
                         </div>
-                    
-                        <div class="description">
-                            <p>My method description.  Like other pieces of your comment blocks,
-                    this can span multiple lines.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">city</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of the city</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
+                        
+                        
+                        
+                        	<div class="well well-small">
+                                    Module: <a href="../modules/v2.5.html">v2.5</a>
                             </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Returns city weather</p>
-                    
+                        
+                        
+                        
+                        
+                        <!-- table of contents -->
+                        
+                        <div id="class-toc" class="page-section">
+                        	<h2>Table of Contents</h2>
+                            <ul>
+                        		<li>
+                        			<strong>Methods</strong>
+                        			<ul>
+                        				<li><a href="#method-byCityId"><span class="im">byCityId</span>(<span class="ia">cityId</span>)</a></li>
+                        				<li><a href="#method-byCityIds"><span class="im">byCityIds</span>(<span class="ia">cityIds</span>)</a></li>
+                        				<li><a href="#method-byCityName"><span class="im">byCityName</span>(<span class="ia">city</span><span class="ia">country</span>)</a></li>
+                        				<li><a href="#method-byGeoLocation"><span class="im">byGeoLocation</span>(<span class="ia">latitude</span><span class="ia">longitude</span>)</a></li>
+                        				<li><a href="#method-byZipcode"><span class="im">byZipcode</span>(<span class="ia">zipcode</span><span class="ia">country</span>)</a></li>
+                        			</ul>
+                        		</li>
+                        
+                        
+                        
+                        	</ul>
+                        </div>
+                        
+                        <!-- details -->
+                        
+                        
+                            <div id="methods" class="page-section">
+                                <h2 class="off-left">Methods</h2>
+                                <div class="item-list">
+                                    <div id="method-byCityId" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>byCityId</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>cityId</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_v2.5_current.js.html#l48"><code>lib&#x2F;v2.5&#x2F;current.js:48</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    			<p>Available since 1.2.1</p>
+                                    	</div>
+                                    
+                                    	<div class="description"><p>My method description.  Like other pieces of your comment blocks,
+                                    this can span multiple lines.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">cityId</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>A city id</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                    					<p>Returns city weather</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<p>current.byCityId(2172797);</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-byCityIds" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>byCityIds</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>cityIds</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_v2.5_current.js.html#l70"><code>lib&#x2F;v2.5&#x2F;current.js:70</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    			<p>Available since 1.2.1</p>
+                                    	</div>
+                                    
+                                    	<div class="description"><p>My method description.  Like other pieces of your comment blocks,
+                                    this can span multiple lines.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">cityIds</code>
+                                    						<span class="type">Integer</span>
+                                    
+                                    
+                                    					<div class="param-description"><p>An array of city ids</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                    					<p>Returns city weather</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<p>current.byCityIds([524901,703448,2643743]);</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-byCityName" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>byCityName</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>city</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>country</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_v2.5_current.js.html#l17"><code>lib&#x2F;v2.5&#x2F;current.js:17</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    			<p>Available since 1.2.1</p>
+                                    	</div>
+                                    
+                                    	<div class="description"><p>My method description.  Like other pieces of your comment blocks,
+                                    this can span multiple lines.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">city</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>The name of the city</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">country</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>The ISO abbreviation of the country. Providing this improves specificity</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                    					<p>Returns city weather</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<p>current.byCityName('Olathe');</p>
+                                    <p>current.byCityName('Olathe', 'us');</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-byGeoLocation" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>byGeoLocation</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>latitude</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>longitude</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_v2.5_current.js.html#l92"><code>lib&#x2F;v2.5&#x2F;current.js:92</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    			<p>Available since 1.2.1</p>
+                                    	</div>
+                                    
+                                    	<div class="description"><p>My method description.  Like other pieces of your comment blocks,
+                                    this can span multiple lines.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">latitude</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>A valid geolocation latitude point</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">longitude</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>A valid geolocation longitude point</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                    					<p>Returns city weather</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<p>current.byGeoLocation(35.2, 139.123);</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
+                                    <div id="method-byZipcode" class="method item">
+                                    	<div class="method-signature">
+                                    	<span class="name"><code>byZipcode</code></span>
+                                    
+                                    		<div class="args">
+                                    			<span class="paren">(</span><ul class="args-list inline commas">
+                                    				<li class="arg">
+                                    						<code>zipcode</code>
+                                    				</li>
+                                    				<li class="arg">
+                                    						<code>country</code>
+                                    				</li>
+                                    			</ul><span class="paren">)</span>
+                                    		</div>
+                                    		<span class="returns-inline">
+                                    			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                    		</span>
+                                    	</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    	<div class="meta">
+                                    				<p>
+                                    				Defined in
+                                    		<a href="../files/lib_v2.5_current.js.html#l116"><code>lib&#x2F;v2.5&#x2F;current.js:116</code></a>
+                                    		</p>
+                                    
+                                    
+                                    
+                                    			<p>Available since 1.2.1</p>
+                                    	</div>
+                                    
+                                    	<div class="description"><p>My method description.  Like other pieces of your comment blocks,
+                                    this can span multiple lines.</p>
+                                    </div>
+                                    
+                                    		<div class="params">
+                                    			<h4>Parameters:</h4>
+                                    
+                                    			<ul class="params-list">
+                                    				<li class="param">
+                                    						<code class="param-name">zipcode</code>
+                                    						<span class="type">Integer  |  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>A valid zipcode value</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    				<li class="param">
+                                    						<code class="param-name">country</code>
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                                    
+                                    
+                                    					<div class="param-description"><p>The ISO abbreviation of the country. Providing this improves specificity</p>
+                                    </div>
+                                    
+                                    				</li>
+                                    			</ul>
+                                    		</div>
+                                    
+                                    		<div class="returns">
+                                    			<h4>Returns:</h4>
+                                    
+                                    			<div class="returns-description">
+                                    						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                    					<p>Returns city weather</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    
+                                    		<div class="example">
+                                    			<h4>Example:</h4>
+                                    
+                                    			<div class="example-content">
+                                    				<p>current.byZipcode(66061);</p>
+                                    <p>current.byZipcode(66061, 'us');</p>
+                                    
+                                    			</div>
+                                    		</div>
+                                    </div>
                                 </div>
                             </div>
-                    
-                            <div class="example">
-                                <h4>Example:</h4>
-                    
-                                <div class="example-content">
-                                    <pre class="code prettyprint"><code>byCityName('Olathe', 'us');</code></pre>
-                    
-                                </div>
-                            </div>
-                    </div>
-            </div>
-
-
-
-    </div>
-</div>
+                        
+                        
+                        
+                        
                     </div>
                 </div>
             </div>

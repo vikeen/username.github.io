@@ -4,14 +4,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "current"
     ],
     "modules": [
-        "current",
         "v2.5"
     ],
     "allModules": [
-        {
-            "displayName": "current",
-            "name": "current"
-        },
         {
             "displayName": "v2.5",
             "name": "v2.5"

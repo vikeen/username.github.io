@@ -14,13 +14,11 @@
         },
         "lib/v2.5/current.js": {
             "name": "lib/v2.5/current.js",
-            "modules": {
+            "modules": {},
+            "classes": {
                 "current": 1
             },
-            "classes": {},
-            "fors": {
-                "current": 1
-            },
+            "fors": {},
             "namespaces": {}
         },
         "lib/v2.5/index.js": {
@@ -36,37 +34,17 @@
     "modules": {
         "v2.5": {
             "name": "v2.5",
-            "submodules": {
-                "current": 1
-            },
-            "elements": {},
-            "classes": {
-                "current": 1
-            },
-            "fors": {
-                "current": 1
-            },
-            "namespaces": {},
-            "tag": "module",
-            "file": "lib/v2.5/index.js",
-            "line": 3
-        },
-        "current": {
-            "name": "current",
             "submodules": {},
             "elements": {},
             "classes": {
                 "current": 1
             },
-            "fors": {
-                "current": 1
-            },
-            "is_submodule": 1,
+            "fors": {},
             "namespaces": {},
-            "module": "v2.5",
-            "namespace": "",
+            "tag": "main",
             "file": "lib/v2.5/current.js",
-            "line": 6
+            "line": 6,
+            "itemtype": "main"
         }
     },
     "classes": {
@@ -79,8 +57,8 @@
             "plugin_for": [],
             "extension_for": [],
             "module": "v2.5",
-            "submodule": "current",
-            "namespace": ""
+            "file": "lib/v2.5/current.js",
+            "line": 6
         }
     },
     "elements": {},
@@ -93,7 +71,7 @@
         },
         {
             "file": "lib/v2.5/current.js",
-            "line": 20,
+            "line": 17,
             "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
             "itemtype": "method",
             "name": "byCityName",
@@ -103,19 +81,125 @@
                     "name": "city",
                     "description": "The name of the city",
                     "type": "String"
+                },
+                {
+                    "name": "country",
+                    "description": "The ISO abbreviation of the country. Providing this improves specificity",
+                    "type": "String"
                 }
             ],
-            "optional": "{String} country The name of the country. Providing this improves specificity",
             "return": {
                 "description": "Returns city weather",
                 "type": "Object"
             },
             "example": [
-                "\n    byCityName('Olathe', 'us');"
+                "\ncurrent.byCityName('Olathe');",
+                "\ncurrent.byCityName('Olathe', 'us');"
             ],
-            "class": "current",
-            "module": "v2.5",
-            "submodule": "current"
+            "class": "current"
+        },
+        {
+            "file": "lib/v2.5/current.js",
+            "line": 48,
+            "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
+            "itemtype": "method",
+            "name": "byCityId",
+            "since": "1.2.1",
+            "params": [
+                {
+                    "name": "cityId",
+                    "description": "A city id",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "Returns city weather",
+                "type": "Object"
+            },
+            "example": [
+                "\ncurrent.byCityId(2172797);"
+            ],
+            "class": "current"
+        },
+        {
+            "file": "lib/v2.5/current.js",
+            "line": 70,
+            "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
+            "itemtype": "method",
+            "name": "byCityIds",
+            "since": "1.2.1",
+            "params": [
+                {
+                    "name": "cityIds",
+                    "description": "An array of city ids",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "Returns city weather",
+                "type": "Object"
+            },
+            "example": [
+                "\ncurrent.byCityIds([524901,703448,2643743]);"
+            ],
+            "class": "current"
+        },
+        {
+            "file": "lib/v2.5/current.js",
+            "line": 92,
+            "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
+            "itemtype": "method",
+            "name": "byGeoLocation",
+            "since": "1.2.1",
+            "params": [
+                {
+                    "name": "latitude",
+                    "description": "A valid geolocation latitude point",
+                    "type": "Number"
+                },
+                {
+                    "name": "longitude",
+                    "description": "A valid geolocation longitude point",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Returns city weather",
+                "type": "Object"
+            },
+            "example": [
+                "\ncurrent.byGeoLocation(35.2, 139.123);"
+            ],
+            "class": "current"
+        },
+        {
+            "file": "lib/v2.5/current.js",
+            "line": 116,
+            "description": "My method description.  Like other pieces of your comment blocks,\nthis can span multiple lines.",
+            "itemtype": "method",
+            "name": "byZipcode",
+            "since": "1.2.1",
+            "params": [
+                {
+                    "name": "zipcode",
+                    "description": "A valid zipcode value",
+                    "type": "Integer|String"
+                },
+                {
+                    "name": "country",
+                    "description": "The ISO abbreviation of the country. Providing this improves specificity",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns city weather",
+                "type": "Object"
+            },
+            "example": [
+                "\ncurrent.byZipcode(66061);",
+                "\ncurrent.byZipcode(66061, 'us');"
+            ],
+            "class": "current"
         }
     ],
     "warnings": [

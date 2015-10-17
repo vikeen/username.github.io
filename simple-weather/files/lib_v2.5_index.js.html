@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
 </head>
@@ -14,7 +15,6 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-	    <img alt="Simple Weather" src="../assets/css/logo.png" style="max-height: 65%;" title="Simple Weather">
             Simple Weather
         </h1>
 	<div class="nav">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/current", "modules/v2.5"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/current", "modules/v2.5"]'>
         </form>
     </div>
 </div>
@@ -34,31 +34,12 @@
     <div class="row">
         <div class="span3">
 	    <div>
-	        <h3>APIs</h3>
 	        <div id="sidebar">
-	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
-	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
-	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	        <div id="classes">
+	            <ul id="api-classes" class="nav nav-list">
+	                    <li><a href="../classes/current.html">current</a></li>
 	            </ul>
-	    
-	            <div id="api-tabview-filter">
-	                <input type="search" placeholder="Type to filter APIs">
-	            </div>
-	    
-	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
-	                <div class="tab-pane active" id="classes">
-	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/current.html">current</a></li>
-	                    </ul>
-	                </div>
-	    
-	                <div class="tab-pane" id="modules">
-	                    <ul id="api-modules" class="nav nav-list">
-	                            <li><a href="../modules/current.html">current</a></li>
-	                            <li><a href="../modules/v2.5.html">v2.5</a></li>
-	                    </ul>
-	                </div>
-	            </div>
+	        </div>
 	        </div>
 	    </div>
         </div>
@@ -89,23 +70,24 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<div class="page-header">
-    <h1>lib/v2.5/index.js <small>File</small></h1>
-</div>
-
-<div class="file">
-    <pre class="prettyprint linenums">
-&quot;use strict&quot;;
-
-/**
- * @module v2.5
- */
-module.exports = {
-    current: require(&quot;./current&quot;)
-};
-
-    </pre>
-</div>
+                        <div class="page-header">
+                            <h1>lib/v2.5/index.js <small>File</small></h1>
+                        </div>
+                        
+                        <div class="file">
+                            <pre class="prettyprint linenums">
+                        &quot;use strict&quot;;
+                        
+                        /**
+                         * @module v2.5
+                         * @main v2.5
+                         */
+                        module.exports = {
+                            current: require(&quot;./current&quot;)
+                        };
+                        
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
